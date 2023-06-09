@@ -2,7 +2,7 @@ const canvas = document.getElementById('gameCanvas');
 const context = canvas.getContext('2d');
 
 // Задайте начальные координаты Кита (центр канваса)
-let blueWhaleX = canvas.width / 2;
+let blueWhaleX = 0;
 let blueWhaleY = canvas.height / 2;
 
 // Задайте начальные координаты препятствия
@@ -33,13 +33,28 @@ function animate() {
   // Очистите экран
   context.clearRect(0, 0, canvas.width, canvas.height);
 
-  // Отрисуйте спрайты
-  context.drawImage(blueWhaleImage, blueWhaleX, blueWhaleY);
-  context.drawImage(obstacleImage, obstacleX, obstacleY);
-
   // Обновите позиции спрайтов
   blueWhaleX += blueWhaleSpeedX;
   obstacleX -= obstacleSpeedX;
+
+  // Проверьте, когда препятствие достигнет края канваса
+  if (obstacleX + obstacleImage.width < 0) {
+    // Препятствие достигло края, переместите его обратно за пределы канваса
+    obstacleX = canvas.width;
+
+    // Обновите позицию кита, когда препятствие появляется
+    blueWhaleX = canvas.width / 2;
+  }
+
+  // Проверьте, когда кит достигнет края канваса
+  if (blueWhaleX > canvas.width) {
+    // Кит достиг края, переместите его обратно за пределы канваса
+    blueWhaleX = -blueWhaleImage.width;
+  }
+
+  // Отрисуйте спрайты
+  context.drawImage(blueWhaleImage, blueWhaleX, blueWhaleY);
+  context.drawImage(obstacleImage, obstacleX, obstacleY);
 
   // Вызовите функцию анимации снова
   requestAnimationFrame(animate);
