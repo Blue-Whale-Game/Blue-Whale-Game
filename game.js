@@ -1,24 +1,24 @@
 const canvas = document.getElementById('gameCanvas');
 const context = canvas.getContext('2d');
 
-// Задайте начальные координаты голубой китовой (центр канваса)
+// Задайте начальные координаты Кита (центр канваса)
 let blueWhaleX = canvas.width / 2;
 let blueWhaleY = canvas.height / 2;
 
 // Задайте начальные координаты препятствия
-let obstacleX = 0;
-let obstacleY = 100;
+let obstacleX = canvas.width;
+let obstacleY = canvas.height / 2;
 
-// Задайте скорости движения голубой китовой и препятствия
+// Задайте скорости движения Кита и препятствия
 let blueWhaleSpeedX = 1;
 let obstacleSpeedX = 3;
 
 const blueWhaleImage = new Image();
-blueWhaleImage.src = 'path/to/Blue_Whale_01.png';
+blueWhaleImage.src = 'Blue_Whale_01.png';
 blueWhaleImage.onload = startGame;
 
 const obstacleImage = new Image();
-obstacleImage.src = 'path/to/Blue_Whale_obstacle.png';
+obstacleImage.src = 'Blue_Whale_obstacle.png';
 obstacleImage.onload = startGame;
 
 let imagesLoaded = 0;
