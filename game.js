@@ -3,14 +3,14 @@ blueWhaleImage.src = 'path/to/Blue_Whale_01.png';
 
 const obstacleImage = new Image();
 obstacleImage.src = 'path/to/Blue_Whale_obstacle.png';
+const blueWhaleImage = new Image();
+blueWhaleImage.src = 'path/to/Blue_Whale_01.png';
+blueWhaleImage.onload = startGame;
 
-// Дождитесь загрузки изображений перед началом игры
-Promise.all([blueWhaleImage.onload, obstacleImage.onload]).then(startGame);
-
+const obstacleImage = new Image();
+obstacleImage.src = 'path/to/Blue_Whale_obstacle.png';
+obstacleImage.onload = startGame;
 function startGame() {
-  // Здесь можно начинать игру
-}
-function animate() {
   // Очистите экран
   context.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -18,13 +18,8 @@ function animate() {
   context.drawImage(blueWhaleImage, blueWhaleX, blueWhaleY);
   context.drawImage(obstacleImage, obstacleX, obstacleY);
 
-  // Обновите позиции спрайтов
-  blueWhaleX += blueWhaleSpeedX;
-  obstacleX -= obstacleSpeedX;
+  // Добавьте остальной код игры
 
-  // Вызовите функцию анимации снова
-  requestAnimationFrame(animate);
+  // Запустите анимацию
+  animate();
 }
-
-// Запустите анимацию
-animate();
