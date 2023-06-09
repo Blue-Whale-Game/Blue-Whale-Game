@@ -1,0 +1,12 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  canvas {
+    background: #042341;
+    display: block;
+    margin: 0 auto;
+  }
+  
