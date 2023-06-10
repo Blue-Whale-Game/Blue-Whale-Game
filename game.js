@@ -28,13 +28,16 @@ obstacleImage.onload = startGame;
 const meduzaImage = new Image();
 meduzaImage.src = 'Meduza_Blue_Whale.png';
 
+const background = new Image();
+background.src = 'Blue_Whale_BG.png';
+
 let imagesLoaded = 0;
 let isJumping = false;
 let score = 0;
 
 function startGame() {
   imagesLoaded++;
-  if (imagesLoaded === 3) {
+  if (imagesLoaded === 4) {
     animate();
   }
 }
@@ -50,6 +53,9 @@ function handleKeyDown(event) {
 
 function animate() {
   context.clearRect(0, 0, canvas.width, canvas.height);
+
+  // Draw background
+  context.drawImage(background, 0, 0, canvas.width, canvas.height);
 
   blueWhaleX += blueWhaleSpeedX;
   obstacleX -= obstacleSpeedX;

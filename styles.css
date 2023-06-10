@@ -1,15 +1,15 @@
 body {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-  }
-  #gameCanvas {
-    background-position: center center;
-  }
-  
-  canvas {
-    background: #ffffff;
-    display: block;
-    margin: 0 auto;
-  }
-  
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-image: url(Blue_Whale_BG.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+canvas {
+  background: #ffffff;
+  display: block;
+  margin: 0 auto;
+}
