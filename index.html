@@ -1,17 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
   <title>Blue Whale Game</title>
   <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
+
     canvas {
-      border: 1px solid black;
+      border: 2px solid #000;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 36px;
+      color: blue;
     }
   </style>
 </head>
 <body>
   <h1>Blue Whale Game</h1>
   <canvas id="gameCanvas" width="800" height="400"></canvas>
-
   <script src="game.js"></script>
 </body>
 </html>
