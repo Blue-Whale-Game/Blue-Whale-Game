@@ -1,31 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Blue Whale Game</title>
-    <style>
-        body {
-            background-color: #f2f2f2;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-
-        canvas {
-            border: 1px solid #000;
-        }
-
-        h1 {
-            color: blue;
-        }
-    </style>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blue Whale Game</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-image: url(Blue_Whale_BG.png);
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    canvas {
+      display: block;
+      margin: 0 auto;
+      background: #ffffff;
+    }
+    #score,
+    #timer {
+      display: block;
+      text-align: center;
+      font-size: 24px;
+      color: #000000;
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
-    <h1>Blue Whale Game</h1>
-    <canvas id="gameCanvas" width="800" height="400"></canvas>
-    <script src="game.js"></script>
+  <canvas id="gameCanvas" width="800" height="600"></canvas>
+  <span id="score">Score: 0</span>
+  <span id="timer">Time: 0s</span>
+  <script src="game.js"></script>
 </body>
 </html>
-
